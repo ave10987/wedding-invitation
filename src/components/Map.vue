@@ -5,8 +5,8 @@
 export default {
   name: 'Map',
   mounted() {
-    const center = new naver.maps.LatLng(37.486922, 127.033433);
-    const map = new naver.maps.Map('map', {
+    const center = new window.naver.maps.LatLng(37.486922, 127.033433);
+    const map = new window.naver.maps.Map('map', {
       center,
       zoom: 10,
       scaleControl: false,
@@ -15,29 +15,30 @@ export default {
       mapTypeControl: false,
       zoomControl: true,
       zoomControlOptions: {
-        style: naver.maps.ZoomControlStyle.SMALL,
-        position: naver.maps.Position.RIGHT_TOP
+        style: window.naver.maps.ZoomControlStyle.SMALL,
+        position: window.naver.maps.Position.RIGHT_TOP,
       },
     });
 
     const mapElement = map.getElement();
-    naver.maps.Event.addDOMListener(mapElement, 'touchstart', (e) => {
+    window.naver.maps.Event.addDOMListener(mapElement, 'touchstart', (e) => {
       e.stopPropagation();
       console.log('TOUCHSTART');
     });
 
     const markerOptions = {
       position: center,
-      map: map,
+      map,
       icon: {
-          url: '../../static/img/heart_icon.png',
-          size: new naver.maps.Size(22, 35),
-          origin: new naver.maps.Point(0, 0),
-          anchor: new naver.maps.Point(11, 35)
-      }
-    }
-    const marker = new naver.maps.Marker(markerOptions);
-  }
-}
+        url: '../../static/img/heart_icon.png',
+        size: new window.naver.maps.Size(22, 35),
+        origin: new window.naver.maps.Point(0, 0),
+        anchor: new window.naver.maps.Point(11, 35),
+      },
+    };
+    const marker = new window.naver.maps.Marker(markerOptions);
+    console.log(marker);
+  },
+};
 </script>
 

@@ -3,48 +3,45 @@
     <swiper :options="swiperOption" class="swiper-wrapper">
       <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>
       <swiper-slide>
+        <Gallery />
+      </swiper-slide>
+      <swiper-slide>
         <Map />
       </swiper-slide>
       <swiper-slide>
-        <div class="title" data-swiper-parallax="-100">Slide 2</div>
+        <div class="title" data-swiper-parallax="-100">Slide 3</div>
         <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
         <div class="text" data-swiper-parallax="-300">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+          <p>TEST</p>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="title" data-swiper-parallax="-100">Slide 3</div>
         <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
         <div class="text" data-swiper-parallax="-300">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+          <p>TEST</p>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="title" data-swiper-parallax="-100">Slide 3</div>
         <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
         <div class="text" data-swiper-parallax="-300">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+          <p>TEST</p>
         </div>
       </swiper-slide>
-      <swiper-slide>
-        <div class="title" data-swiper-parallax="-100">Slide 3</div>
-        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-        <div class="text" data-swiper-parallax="-300">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
-        </div>
-      </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
 </template>
 
 <script>
 import Map from './Map';
+import Gallery from './Gallery';
 
 export default {
   name: 'Home',
   components: {
-    Map
+    Map,
+    Gallery,
   },
   data() {
     return {
@@ -53,14 +50,14 @@ export default {
         // spaceBetween: 30,
         // loop: true,
         parallax: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
-      }
-    }
-  }
-}
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
+      },
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -100,5 +97,3 @@ export default {
     opacity: .4;
   }
 </style>
-
-

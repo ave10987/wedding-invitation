@@ -2,10 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
+import VueLazyLoad from 'vue-lazyload';
 import App from './App';
 import router from './router';
 
 Vue.use(VueAwesomeSwiper);
+Vue.use(VueLazyLoad);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
