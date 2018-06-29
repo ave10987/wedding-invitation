@@ -1,67 +1,77 @@
 <template>
-  <!-- <div @touchmove.stop>
-    <LightBox :images="images" :showLightBox="true" :nThumbs="4"></LightBox>
-  </div> -->
-  <waterfall
-    :align="'center'"
-    :line-gap="200"
-    :min-line-gap="100"
-    :max-line-gap="220"
-    :single-max-width="300"
-    ref="waterfall">
-    <waterfall-slot
-      v-for="(item, index) in items"
-      :width="item.width"
-      :height="item.height"
-      :order="index"
-      :key="index"
+  <div>
+    <div @touchmove.stop>
+      <LightBox :images="images" :showLightBox="false" :nThumbs="4"></LightBox>
+    </div>
+    <swiper :options="swiperOption">
+      <swiper-slide>
+        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE1" alt="" style="width:100%; height:100%;">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE2" alt="" style="width:100%; height:100%;">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE3" alt="" style="width:100%; height:100%;">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE4" alt="" style="width:100%; height:100%;">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE5" alt="" style="width:100%; height:100%;">
+      </swiper-slide>
+    </swiper>
+    <grid-layout
+      :layout="layout"
+      :col-num="4"
+      :row-height="30"
+      :is-draggable="false"
+      :is-resizable="false"
+      :is-mirrored="false"
+      :vertical-compact="true"
+      :margin="[10, 10]"
     >
-    </waterfall-slot>
-  </waterfall>
+    <grid-item
+      v-for="(item, index) in layout"
+      :key="index"
+      :x="item.x"
+      :y="item.y"
+      :w="item.w"
+      :h="item.h"
+      :i="item.i">
+        <img src="https://dummyimage.com/600x400/022/fff" alt="" style="width:100%; height:100%;" @click="test">
+        <!-- <img :src="`../../static/img/${item.i}.jpg`" alt="" style="width:100%; height:100%;"> -->
+    </grid-item>
+    </grid-layout>
+  </div>
 </template>
 
 <script>
 import LightBox from 'vue-image-lightbox';
-import Waterfall from 'vue-waterfall/lib/waterfall';
-import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot';
+import { GridLayout, GridItem } from 'vue-grid-layout';
 
 export default {
   name: 'Gallery',
   components: {
     LightBox,
-    Waterfall,
-    WaterfallSlot,
+    GridLayout,
+    GridItem,
   },
   data() {
     return {
-      items: [
-        {
-          width: 1000,
-          height: 1000,
-          index: 0,
-          style: {
-            background: 'rgba(245, 163, 59, 0.5)',
-            // 'background-image': 'url("../../static/img/2.jpg")',
-          },
-        },
-        {
-          width: 100,
-          height: 100,
-          index: 0,
-          style: {
-            background: 'rgba(245,163,59,.5)',
-            // 'background-image': 'url("../../static/img/2.jpg")',
-          },
-        },
-        {
-          width: 100,
-          height: 100,
-          index: 0,
-          style: {
-            background: 'rgba(245,163,59,.5)',
-            // 'background-image': 'url("../../static/img/2.jpg")',
-          },
-        },
+      swiperOption: {
+        spaceBetween: 30,
+        effect: 'fade',
+        loop: true,
+      },
+      layout: [
+        { x: 0, y: 0, w: 2, h: 4, i: '1' },
+        { x: 2, y: 0, w: 2, h: 4, i: '2' },
+        { x: 0, y: 4, w: 4, h: 5, i: '3' },
+        { x: 0, y: 9, w: 2, h: 6, i: '5' },
+        { x: 2, y: 9, w: 2, h: 6, i: '6' },
+        // { x: 0, y: 6, w: 2, h: 6, i: '7' },
+        // { x: 2, y: 7, w: 2, h: 4, i: '8' },
+        // { x: 0, y: 6, w: 2, h: 5, i: '9' },
       ],
       images: [
         {
@@ -120,8 +130,12 @@ export default {
       // index: 0,
     };
   },
+  methods: {
+    test(e) {
+      console.log('CLICK : ', e);
+    },
+  },
   mounted() {
-    console.log(this.items);
   },
 };
 </script>

@@ -23,7 +23,6 @@ export default {
     const mapElement = map.getElement();
     window.naver.maps.Event.addDOMListener(mapElement, 'touchstart', (e) => {
       e.stopPropagation();
-      console.log('TOUCHSTART');
     });
 
     const markerOptions = {
