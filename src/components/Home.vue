@@ -3,10 +3,11 @@
     <swiper :options="swiperOption" class="swiper-wrapper">
       <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>
       <swiper-slide>
-        <Map />
-      </swiper-slide>
-      <swiper-slide>
-        <Gallery data-swiper-parallax="-200" />
+        <div class="title" data-swiper-parallax="-100">Slide 3</div>
+        <div class="subtitle" data-swiper-parallax="-200">Subtitle3</div>
+        <div class="text" data-swiper-parallax="-300">
+          <p>TEST3</p>
+        </div>
       </swiper-slide>
       <swiper-slide>
         <div class="title" data-swiper-parallax="-100">Slide 3</div>
@@ -14,6 +15,12 @@
         <div class="text" data-swiper-parallax="-300">
           <p>TEST3</p>
         </div>
+      </swiper-slide>
+      <swiper-slide>
+        <Map />
+      </swiper-slide>
+      <swiper-slide>
+        <Gallery data-swiper-parallax="-200" />
       </swiper-slide>
       <swiper-slide>
         <div class="title" data-swiper-parallax="-100">Slide 4</div>
@@ -95,7 +102,7 @@ export default {
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;
-    background-image: url(/static/img/1.jpg);
+    background-image: url(/static/img/1-1.jpg);
     opacity: .4;
   }
 </style>
