@@ -2,11 +2,14 @@
   <div class="container">
     <swiper :options="swiperOption" class="swiper-wrapper">
       <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>
-      <swiper-slide>
-        <div class="title" data-swiper-parallax="-100">Slide 3</div>
-        <div class="subtitle" data-swiper-parallax="-200">Subtitle3</div>
+      <swiper-slide style="color: black; font-size: 40px; background-image: url(/static/img/test.gif);">
+        <div class="title" data-swiper-parallax="-100">결혼합니다!</div>
+        <div class="subtitle" data-swiper-parallax="-200">2018.10.28</div>
         <div class="text" data-swiper-parallax="-300">
-          <p>TEST3</p>
+          14:00
+        </div>
+        <div class="text" data-swiper-parallax="-300">
+          양재역 브라이드밸리
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -27,13 +30,6 @@
         <div class="subtitle" data-swiper-parallax="-200">Subtitle4</div>
         <div class="text" data-swiper-parallax="-300">
           <p>TEST4</p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="title" data-swiper-parallax="-100">Slide 5</div>
-        <div class="subtitle" data-swiper-parallax="-200">Subtitle5</div>
-        <div class="text" data-swiper-parallax="-300">
-          <p>TEST5</p>
         </div>
       </swiper-slide>
     </swiper>
