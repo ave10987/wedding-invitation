@@ -20,28 +20,32 @@
         <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE5" alt="" style="width:100%; height:100%;">
       </swiper-slide>
     </swiper>
-    <grid-layout
-      :layout="layout"
-      :col-num="4"
-      :row-height="30"
-      :is-draggable="false"
-      :is-resizable="false"
-      :is-mirrored="false"
-      :vertical-compact="true"
-      :margin="[10, 10]"
-    >
-    <grid-item
-      v-for="(item, index) in layout"
-      :key="index"
-      :x="item.x"
-      :y="item.y"
-      :w="item.w"
-      :h="item.h"
-      :i="item.i">
-        <img src="https://dummyimage.com/600x400/022/fff" alt="" style="width:100%; height:100%;" @click="test">
-        <!-- <img :src="`../../static/img/${item.i}.jpg`" alt="" style="width:100%; height:100%;"> -->
-    </grid-item>
-    </grid-layout>
+    <swiper :options="verticalSwiperOption" style="height: 300px; background-color: #566;">
+      <swiper-slide style="box-sizing: border-box; -webkit-box-sizing: border-box; height: auto;">
+        <grid-layout
+          :layout="layout"
+          :col-num="4"
+          :row-height="30"
+          :is-draggable="false"
+          :is-resizable="false"
+          :is-mirrored="false"
+          :vertical-compact="true"
+          :margin="[10, 10]"
+        >
+          <grid-item
+            v-for="(item, index) in layout"
+            :key="index"
+            :x="item.x"
+            :y="item.y"
+            :w="item.w"
+            :h="item.h"
+            :i="item.i">
+              <img src="https://dummyimage.com/600x400/022/fff" alt="" style="width:100%; height:100%;" @click="test">
+              <!-- <img :src="`../../static/img/${item.i}.jpg`" alt="" style="width:100%; height:100%;"> -->
+          </grid-item>
+        </grid-layout>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
@@ -58,6 +62,12 @@ export default {
   },
   data() {
     return {
+      verticalSwiperOption: {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        mousewheel: true,
+      },
       swiperOption: {
         spaceBetween: 30,
         effect: 'fade',
@@ -69,9 +79,9 @@ export default {
         { x: 0, y: 4, w: 4, h: 5, i: '3' },
         { x: 0, y: 9, w: 2, h: 6, i: '5' },
         { x: 2, y: 9, w: 2, h: 6, i: '6' },
-        // { x: 0, y: 6, w: 2, h: 6, i: '7' },
-        // { x: 2, y: 7, w: 2, h: 4, i: '8' },
-        // { x: 0, y: 6, w: 2, h: 5, i: '9' },
+        { x: 0, y: 6, w: 2, h: 6, i: '7' },
+        { x: 2, y: 7, w: 2, h: 4, i: '8' },
+        { x: 0, y: 6, w: 2, h: 5, i: '9' },
       ],
       images: [
         {

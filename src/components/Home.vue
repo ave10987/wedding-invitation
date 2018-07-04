@@ -48,16 +48,15 @@ export default {
   },
   data() {
     return {
+      verticalSwiperOption: {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        mousewheel: true,
+      },
       swiperOption: {
-        // slidesPerView: 1,
-        // spaceBetween: 30,
-        // loop: true,
         parallax: true,
         fade: true,
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   clickable: true,
-        // },
       },
     };
   },
@@ -66,11 +65,11 @@ export default {
 
 <style scoped>
   .container {
-    height: 100%;
+    /* height: 100%; */
   }
 
   .swiper-wrapper {
-    height: 100%;
+    /* height: 100%; */
   }
 
   .main_image {
@@ -85,7 +84,7 @@ export default {
     padding: 40px 0;
     background-color: transparent!important;
     justify-content: space-around!important;
-    overflow: auto;
+    /* overflow: auto; */
   }
 
   .parallax-bg {
