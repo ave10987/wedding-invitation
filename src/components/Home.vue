@@ -2,14 +2,38 @@
   <div class="container">
     <swiper :options="swiperOption" class="swiper-wrapper">
       <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>
-      <swiper-slide style="color: black; font-size: 40px; background-image: url(/static/img/test.gif);">
-        <div class="title" data-swiper-parallax="-100">결혼합니다!</div>
-        <div class="subtitle" data-swiper-parallax="-200">2018.10.28</div>
-        <div class="text" data-swiper-parallax="-300">
-          14:00
+      <swiper-slide class="first">
+        <div class="top">
+          <div class="title eng-font" data-swiper-parallax="-100">
+            <span class="save"><strong>Save</strong></span>
+            <span class="the"><strong>the</strong></span>
+            <span class="date"><strong>Date</strong></span>
+          </div>
+          <div class="subtitle date eng-font" data-swiper-parallax="-200"><strong>10/28</strong></div>
+          <div class="text time eng-font" data-swiper-parallax="-300">
+            <strong>
+              <span>2</span>
+              <span class="pm">pm</span>
+            </strong>
+          </div>
         </div>
-        <div class="text" data-swiper-parallax="-300">
-          양재역 브라이드밸리
+        <div class="middle">
+          <div class="vertical-align">
+            <div class="text location kor-font" data-swiper-parallax="-400">
+              양재역 브라이드밸리
+            </div>
+            <div class="name" data-swiper-parallax="-400">
+              <div class="kor-font">최정민</div>
+              <div>
+                <img class="heart" src="../../static/img/main-heart.png" />
+              </div>
+              <div class="kor-font">윤정현</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bottom" data-swiper-parallax="-500">
+          <img class="main-image" src="../../static/img/main.png">
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -62,42 +86,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .container {
-    /* height: 100%; */
-  }
-
-  .swiper-wrapper {
-    /* height: 100%; */
-  }
-
-  .main_image {
-    width: 100%;
-  }
-
-  .swiper-slide {
-    font-size: 18px;
-    color:#fff;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 40px 0;
-    background-color: transparent!important;
-    justify-content: space-around!important;
-    /* overflow: auto; */
-  }
-
-  .parallax-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    /* width: 130%; */
-    width: 300%;
-    height: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    background-image: url(/static/img/1-1.jpg);
-    opacity: .4;
-  }
-</style>

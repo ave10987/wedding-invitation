@@ -1,9 +1,159 @@
+/* iPhone 6S+ w414 h622 */
+/* iPhone 6S w375 h544 */
+
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Black Han Sans', sans-serif;
+  color: #434343;
 }
 
 #app {
   height: 100%;
+}
+
+@font-face {
+  font-family: 'eng-font';
+  src: url('./font/Savoye.ttf'),
+      url('./font/Savoye.woff');
+}
+
+@font-face {
+  font-family: 'kor-font';
+  src: url('./font/sari.otf');
+}
+
+.eng-font {
+  font-family: 'eng-font';
+}
+
+.kor-font {
+  font-family: 'kor-font';
+}
+
+.container {
+  height: 100%;
+}
+
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* width: 130%; */
+  width: 300%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-image: url(/static/img/1-1.jpg);
+  opacity: .3;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: transparent!important;
+  justify-content: space-around!important;
+  /* overflow: auto; */
+}
+
+.first {
+  font-weight: 900;
+}
+
+.first .top,
+.first .middle {
+  overflow: hidden;
+  height: 26%;
+  text-align: center;
+}
+
+.first .middle {
+  position: relative;
+}
+
+.first .middle .vertical-align {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  height: 60px;
+}
+
+.first .bottom {
+  height: 48%;
+  text-align: center;
+}
+
+.first .title {
+  text-align: center;
+}
+@media screen and (min-width: 375px) {
+  .first .title .save,
+  .first .title .date {
+    font-size: 72px;
+    vertical-align: bottom;
+  }
+  .first .title .the {
+    font-size:  48px;
+    margin: 0 10px;
+    vertical-align: bottom;
+  }
+  .first .date,
+  .first .time {
+    text-align: center;
+    font-size: 60px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .first .title .save,
+  .first .title .date {
+    font-size: 60px;
+    vertical-align: bottom;
+  }
+  .first .title .the {
+    font-size:  36px;
+    margin: 0 10px;
+    vertical-align: bottom;
+  }
+  .first .date,
+  .first .time {
+    text-align: center;
+    font-size: 48px;
+    line-height: 30px;
+  }
+}
+
+.first .location {
+  text-align: center;
+  font-size: 22px;
+}
+
+.first .name {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.first .name div {
+  display: inline-block;
+  /* width: 20% */
+}
+
+.first .heart {
+  width: 30px;
+  margin: 0 40px;
+  vertical-align: middle;
+}
+
+.first .main-image {
+  width: 100%;
+  max-width: 400px;
+  /* height: 100%; */
 }
