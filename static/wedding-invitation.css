@@ -12,6 +12,14 @@ html, body {
   font-family: 'Black Han Sans', sans-serif;
   color: #434343;
 }
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
 
 #app {
   height: 100%;
@@ -140,16 +148,116 @@ html, body {
 }
 
 .second .name .name-container {
-  padding-top: 15%;
+  padding-top: 25%;
   text-align: center;
+}
+
+.second .name table {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 20px;
+  word-spacing: 20px;
+}
+
+.second .name .name-table-margin {
+  margin-top: 10px;
+}
+
+.second .name .small {
+  font-size: 14px;
+  padding: 0 5px 0 5px;
+}
+
+.second .name .font1 {
+  font-size: 1.07em;
+}
+
+.second .name .font2 {
+  font-size: 1.04em;
 }
 
 .second .location .location-container {
   text-align: center;
+  padding-top: 10%;
+}
+
+.third .location img {
+  vertical-align: middle;
+}
+
+.third .location,
+.third .location .metro,
+.third .location .bus,
+.third .location .car {
+  margin-top: 15px;
+}
+
+.third .location .address,
+.third .location .metro,
+.third .location .bus,
+.third .location .car {
+  width: 100%;
+  display: inline-block;
+}
+
+.third .location .address .desc,
+.third .location .metro .desc,
+.third .location .bus .desc,
+.third .location .car .desc {
+  float: right;
+  width: 93%;
+}
+
+.third .buttons {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.third .buttons .tmap {
+  background-color: #f5f5f5;
+}
+
+.third .buttons .kakao {
+  background-color: #f9e000;
+}
+
+.third .buttons a {
+  border-radius: 10px;
+  text-decoration: none;
+  color: #434343;
+  width: 45%;
+  display: inline-block;
+  height: 30px;
+  padding: 5px;
+}
+
+.third .buttons img {
+  height: 100%;
+  float: left;
+}
+
+.third .buttons span {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  line-height: 33px;
+  margin-left: 5px;
 }
 
 /* w376 이상 단말 */
 @media screen and (min-width: 376px) {
+  html, body {
+    min-width: 414px;
+    min-height: 622px;
+  }
   .swiper-slide {
     font-size: 18px;
     -webkit-box-sizing: border-box;
@@ -200,10 +308,26 @@ html, body {
   .third .title {
     font-size: 95px;
   }
+
+  .third .location {
+    font-size: 16px;
+  }
+
+  .third .location .small {
+    font-size: 14px;
+  }
+
+  .third .buttons a {
+    font-size: 12px;
+  }
 }
 
 /* w375px 이하 단말 */
 @media screen and (max-width: 375px) {
+  html, body {
+    min-width: 375px;
+    min-height: 544px;
+  }
   .swiper-slide {
     font-size: 18px;
     -webkit-box-sizing: border-box;
@@ -253,5 +377,17 @@ html, body {
 
   .third .title {
     font-size: 80px;
+  }
+
+  .third .location {
+    font-size: 14px;
+  }
+
+  .third .location .small {
+    font-size: 12px;
+  }
+
+  .third .buttons a {
+    font-size: 12px;
   }
 }
