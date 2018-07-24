@@ -1,5 +1,10 @@
-/* iPhone 6S+ w414 h622 */
-/* iPhone 6S w375 h544 */
+/* iPhone 6+, 7+, 8+ w414 h622 */
+/* iPhone 6, 7, 8 w375 h544 */
+/* iPhone X w375 h738 */
+
+/* Galaxy S7, S8, S9 w360 h740 */
+/* LG G5, Galaxy Note 5 w480 h853 */
+/* Nexus, Google Pixel w441 h731 */
 
 html, body {
   height: 100%;
@@ -15,12 +20,14 @@ html, body {
 @font-face {
   font-family: 'eng-font';
   src: url('./font/Savoye.ttf'),
-      url('./font/Savoye.woff');
+      url('./font/Savoye.woff'),
+      local('sans-serif');
 }
 
 @font-face {
   font-family: 'kor-font';
-  src: url('./font/sari.otf');
+  src: url('./font/sari.otf'),
+        local('sans-serif');
 }
 
 .eng-font {
@@ -31,6 +38,11 @@ html, body {
   font-family: 'kor-font';
 }
 
+.default-font {
+  font-family: sans-serif;
+  font-size:16px;
+}
+
 .container {
   height: 100%;
 }
@@ -39,7 +51,6 @@ html, body {
   position: absolute;
   left: 0;
   top: 0;
-  /* width: 130%; */
   width: 300%;
   height: 100%;
   -webkit-background-size: cover;
@@ -49,24 +60,28 @@ html, body {
   opacity: .3;
 }
 
-.swiper-slide {
-  font-size: 18px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 15px;
-  background-color: transparent!important;
-  justify-content: space-around!important;
-  /* overflow: auto; */
+.first,
+.second {
+  font-weight: 900;
 }
 
-.first {
-  font-weight: 900;
+.first .title,
+.second .title,
+.third .title {
+  text-align: center;
+}
+
+.first .top {
+  height: 30%;
+}
+
+.first .middle {
+  height: 10%;
 }
 
 .first .top,
 .first .middle {
   overflow: hidden;
-  height: 26%;
   text-align: center;
 }
 
@@ -74,28 +89,78 @@ html, body {
   position: relative;
 }
 
-.first .middle .vertical-align {
+.first .bottom {
+  height: 60%;
+  text-align: center;
+  position: relative;
+}
+
+.first .location {
+  text-align: center;
+  font-size: 22px;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
   left: 0;
+  right: 0;
   margin: auto;
-  height: 60px;
+  height: 22px;
 }
 
-.first .bottom {
-  height: 48%;
+.first .bottom-container {
+  position: absolute;
+  bottom: 0;
+}
+
+.first .name {
+  text-align: center;
+  font-size: 20px;
+}
+
+.first .name div {
+  display: inline-block;
+}
+
+.first .heart {
+  width: 30px;
+  margin: 0 40px;
+  vertical-align: middle;
+}
+
+.second .subtitle,
+.second .name,
+.second .location {
+  height: 30%;
+  position: relative;
+}
+
+.second .subtitle .subtitle-container {
+  padding-top: 15%;
+  text-align: right;
+}
+
+.second .name .name-container {
+  padding-top: 15%;
   text-align: center;
 }
 
-.first .title {
+.second .location .location-container {
   text-align: center;
 }
-@media screen and (min-width: 375px) {
+
+/* w376 이상 단말 */
+@media screen and (min-width: 376px) {
+  .swiper-slide {
+    font-size: 18px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: transparent!important;
+    justify-content: space-around!important;
+  }
   .first .title .save,
   .first .title .date {
-    font-size: 72px;
+    font-size: 95px;
     vertical-align: bottom;
   }
   .first .title .the {
@@ -109,12 +174,47 @@ html, body {
     font-size: 60px;
     line-height: 40px;
   }
+  .first .main-image {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .second .title {
+    font-size: 95px;
+  }
+  .second .subtitle {
+    font-size: 28px;
+    line-height: 56px;
+  }
+  .second .name {
+    font-size: 22px;
+    line-height: 44px;
+  }
+  .second .location {
+    font-size: 22px;
+    color: #f34336;
+    line-height: 44px;
+  }
+
+  .third .title {
+    font-size: 95px;
+  }
 }
 
-@media screen and (max-width: 376px) {
+/* w375px 이하 단말 */
+@media screen and (max-width: 375px) {
+  .swiper-slide {
+    font-size: 18px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: transparent!important;
+    justify-content: space-around!important;
+  }
   .first .title .save,
   .first .title .date {
-    font-size: 60px;
+    font-size: 80px;
     vertical-align: bottom;
   }
   .first .title .the {
@@ -128,32 +228,30 @@ html, body {
     font-size: 48px;
     line-height: 30px;
   }
-}
+  .first .main-image {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
 
-.first .location {
-  text-align: center;
-  font-size: 22px;
-}
+  .second .title {
+    font-size: 80px;
+  }
+  .second .subtitle {
+    font-size: 26px;
+    line-height: 52px;
+  }
+  .second .name {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .second .location {
+    font-size: 20px;
+    color: #f34336;
+    line-height: 40px;
+  }
 
-.first .name {
-  text-align: center;
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-.first .name div {
-  display: inline-block;
-  /* width: 20% */
-}
-
-.first .heart {
-  width: 30px;
-  margin: 0 40px;
-  vertical-align: middle;
-}
-
-.first .main-image {
-  width: 100%;
-  max-width: 400px;
-  /* height: 100%; */
+  .third .title {
+    font-size: 80px;
+  }
 }

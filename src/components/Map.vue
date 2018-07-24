@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="map" style="width:100%;height:400px;"></div>
+    <div id="map" style="width:100%;height:200px;"></div>
     <a href="tmap://?rGoName=브라이드밸리&rGoX=127.033433&rGoY=37.486922">T Map으로 경로안내</a>
     <a href="#" @click="goKakaoNavi()">KAKAO NAVI로 경로안내</a>
   </div>
