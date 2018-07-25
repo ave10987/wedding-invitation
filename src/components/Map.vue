@@ -1,5 +1,5 @@
 <template>
-  <div id="map" style="width:100%;height:40%"></div>
+  <div id="map" style="width:100%;height:30%"></div>
 </template>
 <script>
 export default {

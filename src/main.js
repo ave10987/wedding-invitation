@@ -10,6 +10,8 @@ Vue.use(VueAwesomeSwiper);
 Vue.use(VueLazyLoad);
 Vue.config.productionTip = false;
 
+Vue.prototype.$EventBus = new Vue();
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

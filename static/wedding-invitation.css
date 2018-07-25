@@ -75,7 +75,8 @@ body {
 
 .first .title,
 .second .title,
-.third .title {
+.third .title,
+.fourth .title {
   text-align: center;
 }
 
@@ -192,7 +193,7 @@ body {
 .third .location .metro,
 .third .location .bus,
 .third .location .car {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .third .location .address,
@@ -231,7 +232,7 @@ body {
   border-radius: 10px;
   text-decoration: none;
   color: #434343;
-  width: 45%;
+  width: 35%;
   display: inline-block;
   height: 30px;
   padding: 5px;
@@ -250,6 +251,14 @@ body {
   margin: auto;
   line-height: 33px;
   margin-left: 5px;
+}
+
+.dimmed {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .5);
 }
 
 /* w376 이상 단말 */
@@ -288,7 +297,9 @@ body {
     max-width: 400px;
   }
 
-  .second .title {
+  .second .title,
+  .third .title,
+  .fourth .title {
     font-size: 95px;
   }
   .second .subtitle {
@@ -305,10 +316,6 @@ body {
     line-height: 44px;
   }
 
-  .third .title {
-    font-size: 95px;
-  }
-
   .third .location {
     font-size: 16px;
   }
@@ -318,7 +325,15 @@ body {
   }
 
   .third .buttons a {
-    font-size: 12px;
+    font-size: 20px;
+  }
+  .third .buttons a:first-child {
+    margin-right: 20px;
+  }
+
+  .fourth .gallery-vertical-swiper {
+    height: 500px;
+    margin-top: 10px;
   }
 }
 
@@ -358,7 +373,9 @@ body {
     max-width: 400px;
   }
 
-  .second .title {
+  .second .title,
+  .third .title,
+  .fourth .title {
     font-size: 80px;
   }
   .second .subtitle {
@@ -375,10 +392,6 @@ body {
     line-height: 40px;
   }
 
-  .third .title {
-    font-size: 80px;
-  }
-
   .third .location {
     font-size: 14px;
   }
@@ -388,6 +401,10 @@ body {
   }
 
   .third .buttons a {
-    font-size: 12px;
+    font-size: 16px;
+  }
+
+  .third .buttons a:first-child {
+    margin-right: 15px;
   }
 }

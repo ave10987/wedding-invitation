@@ -1,26 +1,6 @@
 <template>
   <div>
-    <div @touchmove.stop>
-      <LightBox :images="images" :showLightBox="false" :nThumbs="4"></LightBox>
-    </div>
-    <swiper :options="swiperOption">
-      <swiper-slide>
-        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE1" alt="" style="width:100%; height:100%;">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE2" alt="" style="width:100%; height:100%;">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE3" alt="" style="width:100%; height:100%;">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE4" alt="" style="width:100%; height:100%;">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="https://dummyimage.com/600x400/000000/ffffff&text=FADE+SWIPE5" alt="" style="width:100%; height:100%;">
-      </swiper-slide>
-    </swiper>
-    <swiper :options="verticalSwiperOption" style="height: 300px; background-color: #566;">
+    <swiper :options="verticalSwiperOption" class="gallery-vertical-swiper" :style="{height: `${swiperHeight}px`}">
       <swiper-slide style="box-sizing: border-box; -webkit-box-sizing: border-box; height: auto;">
         <grid-layout
           :layout="layout"
@@ -40,8 +20,7 @@
             :w="item.w"
             :h="item.h"
             :i="item.i">
-              <img src="https://dummyimage.com/600x400/022/fff" alt="" style="width:100%; height:100%;" @click="test">
-              <!-- <img :src="`../../static/img/${item.i}.jpg`" alt="" style="width:100%; height:100%;"> -->
+              <img :src="item.src" alt="" style="width:100%; height:100%;" @click="onClickImage" :data-index="index">
           </grid-item>
         </grid-layout>
       </swiper-slide>
@@ -68,20 +47,16 @@ export default {
         freeMode: true,
         mousewheel: true,
       },
-      swiperOption: {
-        spaceBetween: 30,
-        effect: 'fade',
-        loop: true,
-      },
       layout: [
-        { x: 0, y: 0, w: 2, h: 4, i: '1' },
-        { x: 2, y: 0, w: 2, h: 4, i: '2' },
-        { x: 0, y: 4, w: 4, h: 5, i: '3' },
-        { x: 0, y: 9, w: 2, h: 6, i: '5' },
-        { x: 2, y: 9, w: 2, h: 6, i: '6' },
-        { x: 0, y: 6, w: 2, h: 6, i: '7' },
-        { x: 2, y: 7, w: 2, h: 4, i: '8' },
-        { x: 0, y: 6, w: 2, h: 5, i: '9' },
+        { x: 0, y: 0, w: 2, h: 3, i: '1', src: '../../static/img/1.jpg' },
+        { x: 2, y: 0, w: 2, h: 6, i: '2', src: '../../static/img/2.jpg' },
+        { x: 0, y: 3, w: 2, h: 6, i: '3', src: '../../static/img/3.jpg' },
+        { x: 2, y: 6, w: 2, h: 6, i: '4', src: '../../static/img/4.jpg' },
+        { x: 0, y: 9, w: 2, h: 6, i: '5', src: '../../static/img/5.jpg' },
+        { x: 2, y: 12, w: 2, h: 3, i: '6', src: '../../static/img/6.jpg' },
+        { x: 0, y: 15, w: 2, h: 6, i: '7', src: '../../static/img/7.jpg' },
+        { x: 2, y: 15, w: 2, h: 6, i: '8', src: '../../static/img/8.jpg' },
+        { x: 0, y: 21, w: 4, h: 6, i: '9', src: '../../static/img/9.jpg' },
       ],
       images: [
         {
@@ -125,28 +100,28 @@ export default {
           src: 'https://placekitten.com/810/800',
         },
       ],
-      // images: [
-      //   'https://placekitten.com/801/800',
-      //   'https://placekitten.com/802/800',
-      //   'https://placekitten.com/803/800',
-      //   'https://placekitten.com/804/800',
-      //   'https://placekitten.com/805/800',
-      //   'https://placekitten.com/806/800',
-      //   'https://placekitten.com/807/800',
-      //   'https://placekitten.com/808/800',
-      //   'https://placekitten.com/809/800',
-      //   'https://placekitten.com/810/800',
-      // ],
-      // index: 0,
     };
   },
-  methods: {
-    test(e) {
-      console.log('CLICK : ', e);
-    },
+  computed: {
+    swiperHeight() {
+      return screen.height * 0.8;
+    }
   },
-  mounted() {
+  methods: {
+    onClickImage(e) {
+      this.$EventBus.$emit('galleryOpen', e.target.getAttribute('data-index'));
+    },
   },
 };
 </script>
+
+<style>
+.fourth .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+}
+</style>
+
 
