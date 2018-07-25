@@ -104,7 +104,7 @@ export default {
   },
   computed: {
     swiperHeight() {
-      return screen.height * 0.8;
+      return screen.height * 0.7;
     }
   },
   methods: {
@@ -121,6 +121,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     height: 250px;
+    padding: 0;
 }
 </style>
 

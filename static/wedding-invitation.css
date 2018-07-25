@@ -330,11 +330,6 @@ body {
   .third .buttons a:first-child {
     margin-right: 20px;
   }
-
-  .fourth .gallery-vertical-swiper {
-    height: 500px;
-    margin-top: 10px;
-  }
 }
 
 /* w375px 이하 단말 */
@@ -379,7 +374,7 @@ body {
     font-size: 80px;
   }
   .second .subtitle {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 52px;
   }
   .second .name {

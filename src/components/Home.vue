@@ -191,7 +191,7 @@ export default {
   },
   data() {
     return {
-      galleryHeight: screen.height * 0.9,
+      galleryHeight: 0,
       gallerySwiperOption: {
         spaceBetween: 30,
         effect: 'coverflow',
@@ -235,6 +235,7 @@ export default {
   mounted() {
     this.$EventBus.$on('galleryOpen', (index) => {
       const fullScreenSwiper = document.querySelector('.full-screen-swiper').swiper;
+      this.galleryHeight = screen.height * 0.8;
       fullScreenSwiper.slideTo(parseInt(index, 10) + 1, 0);
       this.isGalleryOpen = true;
     })
