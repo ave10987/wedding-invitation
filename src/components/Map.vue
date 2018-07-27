@@ -36,7 +36,6 @@ export default {
       },
     };
     const marker = new window.naver.maps.Marker(markerOptions);
-    console.log(marker);
   },
 };
 </script>

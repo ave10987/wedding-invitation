@@ -20,7 +20,7 @@
             :w="item.w"
             :h="item.h"
             :i="item.i">
-              <img :src="item.src" alt="" style="width:100%; height:100%;" @click="onClickImage" :data-index="index">
+              <img :data-src="item.src" alt="" style="width:100%; height:100%;" @click="onClickImage" :data-index="index" class="swiper-lazy">
           </grid-item>
         </grid-layout>
       </swiper-slide>
@@ -41,6 +41,7 @@ export default {
   },
   data() {
     return {
+      clientHeight: document.documentElement.clientHeight,
       verticalSwiperOption: {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -104,13 +105,19 @@ export default {
   },
   computed: {
     swiperHeight() {
-      return screen.height * 0.7;
-    }
+      return this.clientHeight * 0.75;
+    },
   },
   methods: {
     onClickImage(e) {
       this.$EventBus.$emit('galleryOpen', e.target.getAttribute('data-index'));
     },
+  },
+  mounted() {
+    const gallerySwiper = document.querySelector('.gallery-vertical-swiper.swiper-container').swiper;
+    gallerySwiper.on('resize', () => {
+      this.clientHeight = document.documentElement.clientHeight;
+    });
   },
 };
 </script>
@@ -124,5 +131,3 @@ export default {
     padding: 0;
 }
 </style>
-
-

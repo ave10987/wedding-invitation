@@ -9,8 +9,10 @@
 html, body {
   height: 100%;
   margin: 0;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: sans-serif;
   color: #434343;
+  max-width: 480px;
+  max-height: 853px;
 }
 body {
   position: absolute;
@@ -27,14 +29,13 @@ body {
 
 @font-face {
   font-family: 'eng-font';
-  src: url('./font/Savoye.ttf'),
-      url('./font/Savoye.woff'),
+  src: url('font/Savoye.woff') format("woff"),
       local('sans-serif');
 }
 
 @font-face {
   font-family: 'kor-font';
-  src: url('./font/sari.otf'),
+  src: url('font/sari.otf'),
         local('sans-serif');
 }
 
@@ -81,44 +82,26 @@ body {
 }
 
 .first .top {
-  height: 30%;
-}
-
-.first .middle {
-  height: 10%;
-}
-
-.first .top,
-.first .middle {
+  height: 35%;
   overflow: hidden;
   text-align: center;
-}
-
-.first .middle {
-  position: relative;
-}
-
-.first .bottom {
-  height: 60%;
-  text-align: center;
-  position: relative;
+  opacity: 1;
 }
 
 .first .location {
   text-align: center;
   font-size: 22px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 22px;
+  margin-bottom: 10px;
 }
 
 .first .bottom-container {
   position: absolute;
   bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-height: 375px;
 }
 
 .first .name {
@@ -136,6 +119,13 @@ body {
   vertical-align: middle;
 }
 
+.first .heart.loaded {
+  animation-duration: 2s;
+  animation-name: bounceIn;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
 .second .subtitle,
 .second .name,
 .second .location {
@@ -149,7 +139,7 @@ body {
 }
 
 .second .name .name-container {
-  padding-top: 25%;
+  padding-top: 15%;
   text-align: center;
 }
 
@@ -253,6 +243,43 @@ body {
   margin-left: 5px;
 }
 
+.fifth p {
+  opacity: 0;
+}
+.fifth p:first-child {
+  margin-top: 0;
+}
+
+.fifth .fadeup {
+  animation-duration: 3s;
+  animation-name: fadeup;
+  animation-fill-mode: forwards;
+  text-align: center;
+}
+
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
 .dimmed {
   position: absolute;
   height: 100%;
@@ -291,6 +318,7 @@ body {
     font-size: 60px;
     line-height: 40px;
   }
+  .first .main-image-bw,
   .first .main-image {
     margin-top: 30px;
     width: 100%;
@@ -330,6 +358,15 @@ body {
   .third .buttons a:first-child {
     margin-right: 20px;
   }
+  .fifth .poem-wrapper {
+    position: absolute;
+    height: 468px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
 
 /* w375px 이하 단말 */
@@ -362,6 +399,7 @@ body {
     font-size: 48px;
     line-height: 30px;
   }
+  .first .main-image-bw,
   .first .main-image {
     margin-top: 10px;
     width: 100%;
@@ -401,5 +439,15 @@ body {
 
   .third .buttons a:first-child {
     margin-right: 15px;
+  }
+
+  .fifth .poem-wrapper {
+    position: absolute;
+    height: 447px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 }
