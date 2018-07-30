@@ -284,30 +284,28 @@ export default {
       if (mainSwiper.activeIndex === 1) {
         let i = 0;
         let j = 0;
-        const text1 = "이 사람이라고 생각했습니다.";
-        const text2 = "그래서 결혼합니다.";
+        const text1 = '이 사람이라고 생각했습니다.';
+        const text2 = '그래서 결혼합니다.';
         const speed = 150;
         const typeWriter = () => {
           if (i < text1.length) {
             document.getElementById('text1').innerHTML += text1.charAt(i);
-            i++;
+            i += 1;
             this.text1Timer = setTimeout(typeWriter, speed);
-          } else if(j < text2.length) {
+          } else if (j < text2.length) {
             document.getElementById('text2').innerHTML += text2.charAt(j);
-            j++;
+            j += 1;
             this.text2Timer = setTimeout(typeWriter, speed);
           } else {
             mainSwiper.off('slideChange');
           }
         };
         typeWriter();
-      } else {
-        if (this.text1Timer || this.text2Timer) {
-          clearTimeout(this.text1Timer);
-          clearTimeout(this.text2Timer);
-          document.getElementById('text1').innerHTML = '';
-          document.getElementById('text2').innerHTML = '';
-        }
+      } else if (this.text1Timer || this.text2Timer) {
+        clearTimeout(this.text1Timer);
+        clearTimeout(this.text2Timer);
+        document.getElementById('text1').innerHTML = '';
+        document.getElementById('text2').innerHTML = '';
       }
     });
 
