@@ -122,13 +122,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.fourth .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 250px;
-    padding: 0;
-}
-</style>
