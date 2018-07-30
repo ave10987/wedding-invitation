@@ -102,6 +102,7 @@ body {
   right: 0;
   margin: auto;
   max-height: 375px;
+  text-align: center;
 }
 
 .first .name {

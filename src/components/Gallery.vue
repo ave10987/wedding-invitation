@@ -13,6 +13,7 @@
           :margin="[10, 10]"
         >
           <grid-item
+            style="overflow: hidden;"
             v-for="(item, index) in layout"
             :key="index"
             :x="item.x"
@@ -20,7 +21,7 @@
             :w="item.w"
             :h="item.h"
             :i="item.i">
-              <img :data-src="item.src" alt="" style="width:100%; height:100%;" @click="onClickImage" :data-index="index" class="swiper-lazy">
+              <img :data-src="item.src" alt="" style="width:100%; position: absolute; top: 0; bottom: 0; margin: auto;" @click="onClickImage" :data-index="index" class="swiper-lazy">
           </grid-item>
         </grid-layout>
       </swiper-slide>
