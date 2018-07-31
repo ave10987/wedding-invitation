@@ -5,47 +5,47 @@
       <swiper :options="gallerySwiperOption" class="full-screen-swiper" :style="{ height: `${galleryHeight}px` }">
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/1.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/1.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/2.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/2.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/3.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/3.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/4.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/4.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/5.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/5.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/6.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/6.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/7.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/7.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/8.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/8.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
         <swiper-slide @click.prevent.stop>
           <div>
-            <img data-src="../../static/img/9.jpg" alt="" class="swiper-lazy">
+            <img data-src="/static/img/9.jpg" alt="" class="swiper-lazy">
           </div>
         </swiper-slide>
       </swiper>
