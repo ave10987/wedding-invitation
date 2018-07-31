@@ -224,7 +224,6 @@ export default {
   },
   computed: {
     galleryHeight() {
-      console.log(this.clientHeight);
       return this.clientHeight * 0.9;
     },
   },

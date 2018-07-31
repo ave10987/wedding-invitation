@@ -56,10 +56,6 @@ export default {
     height: 100%;
   }
 
-  .first .title {
-    /* height: 100px; */
-  }
-
   .first .top {
     flex: 2;
     -webkit-flex: 2;
