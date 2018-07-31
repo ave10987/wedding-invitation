@@ -11,6 +11,7 @@
           :is-mirrored="false"
           :vertical-compact="true"
           :margin="[10, 10]"
+          class="grid-layout"
         >
           <grid-item
             style="overflow: hidden;"
@@ -60,48 +61,6 @@ export default {
         { x: 2, y: 15, w: 2, h: 6, i: '8', src: '../../static/img/8.jpg' },
         { x: 0, y: 21, w: 4, h: 6, i: '9', src: '../../static/img/9.jpg' },
       ],
-      images: [
-        {
-          thumb: 'https://placekitten.com/801/800',
-          src: 'https://placekitten.com/801/800',
-        },
-        {
-          thumb: 'https://placekitten.com/802/800',
-          src: 'https://placekitten.com/802/800',
-        },
-        {
-          thumb: 'https://placekitten.com/803/800',
-          src: 'https://placekitten.com/803/800',
-        },
-        {
-          thumb: 'https://placekitten.com/804/800',
-          src: 'https://placekitten.com/804/800',
-        },
-        {
-          thumb: 'https://placekitten.com/805/800',
-          src: 'https://placekitten.com/805/800',
-        },
-        {
-          thumb: 'https://placekitten.com/806/800',
-          src: 'https://placekitten.com/806/800',
-        },
-        {
-          thumb: 'https://placekitten.com/807/800',
-          src: 'https://placekitten.com/807/800',
-        },
-        {
-          thumb: 'https://placekitten.com/808/800',
-          src: 'https://placekitten.com/808/800',
-        },
-        {
-          thumb: 'https://placekitten.com/809/800',
-          src: 'https://placekitten.com/809/800',
-        },
-        {
-          thumb: 'https://placekitten.com/810/800',
-          src: 'https://placekitten.com/810/800',
-        },
-      ],
     };
   },
   computed: {
@@ -122,3 +81,10 @@ export default {
   },
 };
 </script>
+
+<style>
+  .grid-layout {
+    margin-top: -10px;
+  }
+</style>
+

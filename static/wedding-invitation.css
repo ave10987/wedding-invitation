@@ -11,13 +11,11 @@ html, body {
   margin: 0;
   font-family: sans-serif;
   color: #434343;
-  max-width: 480px;
-  max-height: 853px;
+  max-width: 414px;
+  max-height: 622px;
 }
 body {
   position: absolute;
-  top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
   margin: auto;
@@ -79,52 +77,7 @@ body {
 .third .title,
 .fourth .title {
   text-align: center;
-}
-
-.first .top {
-  height: 35%;
-  overflow: hidden;
-  text-align: center;
-  opacity: 1;
-}
-
-.first .location {
-  text-align: center;
-  font-size: 22px;
   margin-bottom: 10px;
-}
-
-.first .bottom-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  max-height: 375px;
-  text-align: center;
-}
-
-.first .name {
-  text-align: center;
-  font-size: 20px;
-}
-
-.first .name div {
-  display: inline-block;
-}
-
-.first .heart {
-  width: 30px;
-  margin: 0 40px;
-  vertical-align: middle;
-}
-
-.first .heart.loaded {
-  animation-duration: 2s;
-  animation-name: bounceIn;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
 }
 
 .second .subtitle,
@@ -317,7 +270,7 @@ body {
   .first .time {
     text-align: center;
     font-size: 60px;
-    line-height: 40px;
+    line-height: 45px;
   }
   .first .main-image-bw,
   .first .main-image {
@@ -386,19 +339,19 @@ body {
   }
   .first .title .save,
   .first .title .date {
-    font-size: 80px;
+    font-size: 85px;
     vertical-align: bottom;
   }
   .first .title .the {
-    font-size:  36px;
+    font-size:  50px;
     margin: 0 10px;
     vertical-align: bottom;
   }
   .first .date,
   .first .time {
     text-align: center;
-    font-size: 48px;
-    line-height: 30px;
+    font-size: 60px;
+    line-height: 40px;
   }
   .first .main-image-bw,
   .first .main-image {
@@ -410,7 +363,7 @@ body {
   .second .title,
   .third .title,
   .fourth .title {
-    font-size: 80px;
+    font-size: 85px;
   }
   .second .subtitle {
     font-size: 24px;

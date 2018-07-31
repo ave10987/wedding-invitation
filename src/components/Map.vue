@@ -35,7 +35,7 @@ export default {
         anchor: new window.naver.maps.Point(11, 35),
       },
     };
-    const marker = new window.naver.maps.Marker(markerOptions);
+    new window.naver.maps.Marker(markerOptions);
   },
 };
 </script>
